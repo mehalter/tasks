@@ -1,0 +1,11 @@
+#compdef td te=td
+#autoload
+
+if [ ${#words[@]} -eq 2 ] || ([ ${#words[@]} -gt 2 ] && [ ${words[1]} = td ]); then
+  local all_aliases=()
+  while IFS= read -r line; do
+    all_aliases+=("$line")
+  done <<< "$(sed = $taskfile | sed 'N;s/\n/:/' 2>/dev/null)"
+
+  _describe -t aliases 'tasks:' all_aliases && return 0
+fi
