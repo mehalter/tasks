@@ -19,3 +19,5 @@ ohmyzsh plugin for managing very simple tasks (with tab completion!)
 ## Display Tasks on Startup
 
 Just add `echo "$(t)"` to your `.zshrc` file!
+
+![Startup Example](startup.png) 
